@@ -21,7 +21,7 @@
                 <li class="breadcrumb-item">Get Supplier Token</li>
             </ol>
             <div class="card-body">
-                <form target="_blank" method="POST" action="/api/v1/client/suppliers/access_token/">
+                <form target="_blank" method="POST" action="https://www.cobranzas.com/api/v1/client/suppliers/access_token/">
                     <h5>POST: /api/v1/client/suppliers/access_token/</h5>
                     <div class="form-group row">
                         <label class="col-sm-2 col-form-label">client</label>
@@ -58,7 +58,7 @@
                 <li class="breadcrumb-item">Login Supplier with Token</li>
             </ol>
             <div class="card-body">
-                <form action="/api/v1/session/fromToken/" method="GET" target="_blank">
+                <form action="https://www.cobranzas.com/api/v1/session/fromToken/" method="GET" target="_blank">
                     <h5>POST: /api/v1/session/fromToken/</h5>
                     <div class="form-group row">
                         <label class="col-sm-2 col-form-label">token</label>
@@ -72,7 +72,6 @@
         </div>
     </div>
     <script>
-        window.axios.defaults.baseURL = 'https://cobranzas.com'
         function clientLogin() {
             const qs = sel => document.querySelector('#clientLogin').querySelector(sel)
             const UI = {
