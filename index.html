@@ -15,13 +15,23 @@
         <div class="jumbotron">
             <h2>Access Token Demo</h2>
         </div>
+        <div class="card" style="margin-bottom: 2rem">
+            <ol class="breadcrumb">
+                <li class="breadcrumb-item">Demo</li>
+                <li class="breadcrumb-item">baseURL</li>
+            </ol>
+            <div class="card-body">
+                <input id="baseURL" class="form-control">
+            </div>
+        </div>
         <div id="clientLogin" class="card" style="margin-bottom: 2rem">
             <ol class="breadcrumb">
                 <li class="breadcrumb-item">Demo</li>
                 <li class="breadcrumb-item">Get Supplier Token</li>
             </ol>
             <div class="card-body">
-                <form target="_blank" method="POST" action="https://www.cobranzas.com/api/v1/client/suppliers/access_token/">
+                <form target="_blank" method="POST"
+                    action="https://www.cobranzas.com/api/v1/client/suppliers/access_token/">
                     <h5>POST: /api/v1/client/suppliers/access_token/</h5>
                     <div class="form-group row">
                         <label class="col-sm-2 col-form-label">client</label>
@@ -72,13 +82,29 @@
         </div>
     </div>
     <script>
+        window.state = {
+            baseURL: 'https://www.cobranzas.com',
+            EP_ACCESS_TOKEN: '/api/v1/client/suppliers/access_token/',
+            EP_FROM_TOKEN: '/api/v1/session/fromToken/',
+        }
+        update(state)
+        document.getElementById('baseURL').value = window.state.baseURL
+        document.getElementById('baseURL').addEventListener('change', ev => {
+            Object.assign(window.state, {
+                baseURL: ev.target.value
+            })
+            update(window.state)
+        })
+        function update(state) {
+            window.axios.defaults.baseURL = state.baseURL
+        }
         function clientLogin() {
             const qs = sel => document.querySelector('#clientLogin').querySelector(sel)
             const UI = {
                 form: qs("form")
             }
             function getToken(params) {
-                const ep = UI.form.action.replace(window.location.href, '')
+                const ep = window.state.EP_ACCESS_TOKEN
                 return axios.post(ep, params)
                 return axios.get(ep, { params })
             }
