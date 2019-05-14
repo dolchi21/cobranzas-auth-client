@@ -1,0 +1,27 @@
+{
+  "name": "cobranzas-auth",
+  "version": "1.0.0",
+  "description": "",
+  "main": "dist/index.js",
+  "types": "dist/index.d.ts",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/dolchi21/cobranzas-auth-client.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/dolchi21/cobranzas-auth-client/issues"
+  },
+  "homepage": "https://github.com/dolchi21/cobranzas-auth-client#readme",
+  "dependencies": {
+    "axios": "^0.18.0"
+  },
+  "devDependencies": {
+    "typescript": "^3.4.5"
+  }
+}
