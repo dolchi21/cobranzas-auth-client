@@ -1,4 +1,4 @@
-import * as Lib from './'
+import * as Lib from '..'
 
 async function main() {
     
